@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                <span>Le Bao Tran</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Frontend Developer</h1>
+            <p>html only with proper layout, no styling</p>
+        </div>
+    </section>
+
+    <div class="container content-wrapper">
+        <div class="column">
+            <div class="section">
+                <h2 class="section-header">Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">HTML Only Portfolio</div>
+                    <div class="project-item">Calculator</div>
+                    <div class="project-item">Quiz App</div>
+                    <div class="project-item">Countdown Timer</div>
+                    <div class="project-item">Product Upcoming Page</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="section">
+                <h2 class="section-header">Work Experience</h2>
+                <div class="work-experience-grid">
+                    <div class="work-item">
+                        <h3>roadmap.sh</h3>
+                        <p>Solved all the frontend projects</p>
+                        <a href="#" class="profile-link">Visit my Profile</a>
+                    </div>
+                    
+                    <div class="work-item">
+                        <h3>OpenSource Work</h3>
+                        <p>Contributed to 50 opensource projects. Made my own projects with 200 GitHub Stars.</p>
+                        <a href="#" class="profile-link">Visit my GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <div class="section">
+                <h2 class="section-header">Education</h2>
+                <div class="education-details">
+                    <p>Graduated with 3.76 out of 4 CGPA. Won Acme Hackathon. Organized 30 sessions.</p>
+                    <p>Courses I took:</p>
+                    <ul class="courses-list">
+                        <li>Object Oriented Programming</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Web Engineering</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Human Computer Interaction</li>
+                        <li>Computer Graphics</li>
+                        <li>Database Management Systems</li>
+                        <li>Distributed Database Systems</li>
+                        <li>Discreet Mathematics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+          
+    <div class="container content-wrapper">
+            <div class="reviews-section">
+                <h2 class="reviews-header">Reviews From my Teachers</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <p class="review-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                        <p class="reviewer-name">Jane Doe</p>
+                        <p class="reviewer-title">Assistant Professor</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <p class="review-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                        <p class="reviewer-name">Jane Doe</p>
+                        <p class="reviewer-title">Assistant Professor</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <p class="review-text">John doe was a brilliant student; always stood out with his assignments.</p>
+                        <p class="reviewer-name">Jane Doe</p>
+                        <p class="reviewer-title">Assistant Professor</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <footer>
+        <p>&copy; all rights reserved 2025</p>
+    </footer>
+
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        ☀️
+    </button>
+
+    <script>
+        // Dark mode toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Check for saved theme preference or use system preference
+        const currentTheme = localStorage.getItem('theme') || 
+                            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        // Set initial theme
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '🌙';
+        } else {
+            document.body.removeAttribute('data-theme');
+            themeToggle.textContent = '☀️';
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', function() {
+            let theme;
+            if (document.body.getAttribute('data-theme') === 'dark') {
+                document.body.removeAttribute('data-theme');
+                theme = 'light';
+                themeToggle.textContent = '☀️';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                theme = 'dark';
+                themeToggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>
